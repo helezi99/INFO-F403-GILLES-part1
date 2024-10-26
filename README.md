@@ -6,7 +6,7 @@ Work: Herma Elezi
 
 ---
 
-## Background
+## Introduction
 
 In the world of programming languages, defining and recognizing valid code syntax is fundamental. Lexical analyzers, also known as scanners, play a vital role by transforming source code into tokens for further processing by parsers and compilers. The Genial Imperative Language for Learning and the Enlightenment of Students (GILLES) was crafted with a similar goal—to provide students a hands-on experience with compiler theory.
 
@@ -14,7 +14,7 @@ Our project is dedicated to developing a **lexical analyzer for GILLES**, design
 
 ---
 
-## Motivation and Objective of the Project
+## Objective of the Project
 
 The objective of this project is to implement a **reliable lexical analyzer** capable of:
 1. Recognizing essential GILLES language tokens.
