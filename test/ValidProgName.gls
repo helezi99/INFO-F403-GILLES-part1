@@ -1,0 +1,14 @@
+LET Valid_ProgName_usingAllValidCharacters BE
+    var1 = 50:
+    var2 = var1 - 20:
+END
+
+LET Another__Valid_progName___ BE
+    var1 = -10:
+    var2 = var1 - 20:
+END
+
+LET VALID BE
+    var1 = 50:
+    var2 = var1 - 20:
+END

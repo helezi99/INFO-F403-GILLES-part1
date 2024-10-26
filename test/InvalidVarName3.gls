@@ -1,0 +1,4 @@
+LET InvalidVar BE
+    var_iable = 5:  $ Invalid VarName, starts with uppercase
+    b = var_iable + 3:
+END

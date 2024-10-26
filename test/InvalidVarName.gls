@@ -1,0 +1,4 @@
+LET InvalidVar BE
+    A = 5:
+    b = A + 3:
+END

@@ -1,0 +1,13 @@
+(IfabbbTHENx=3:
+
+(IF abbb THEN x=3:
+
+(   IF  abbb    THEN    x=3 :
+
+(
+    IF    abbb
+    THEN
+        x = 3
+    :
+
+(IF abbbTHENx =3:

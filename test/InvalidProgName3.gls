@@ -1,0 +1,4 @@
+LET InvalidPr0gName BE 
+    a = 5:
+    b = a + 3:
+END

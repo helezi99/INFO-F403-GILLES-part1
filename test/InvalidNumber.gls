@@ -1,0 +1,4 @@
+LET invalidProgName BE 
+    a = 5.0:
+    b = a + 0,3:
+END

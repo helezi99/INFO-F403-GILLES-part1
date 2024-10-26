@@ -1,0 +1,11 @@
+LET ValidVarName BE
+    var1 = 50:
+    v1a2r3 = var1 + 100:
+END
+
+LET ValidVarName_SameAsToken BE
+    if = 10:
+    else = 20:
+    end = 30:
+    let = 40:
+END

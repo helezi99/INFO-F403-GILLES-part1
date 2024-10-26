@@ -1,0 +1,4 @@
+LET _InvalidProgName BE 
+    a = 5:
+    b = a + 3:
+END
