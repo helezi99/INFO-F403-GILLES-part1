@@ -14,8 +14,7 @@ import java.util.regex.PatternSyntaxException;
  * Project Supervisor: [Instructor's Name, if applicable]
  * 
  * @version 1.0
- * @author 
- * Herma ELEZI
+ * @author Herma ELEZI
  * MA-Computer science
  * Université Libre de Bruxelles
  * 
