@@ -2,8 +2,6 @@ import java.util.List;
 import java.util.ArrayList;
 
 /**
- * A skeleton class to represent parse trees. 
- * 
  * @author Herma ELEZI
  */
 
