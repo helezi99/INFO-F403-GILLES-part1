@@ -1,4 +1,4 @@
-# GILLES Compiler Project Part-1
+# GILLES Compiler Project Part-1&2
 **INFO-F403 - Language Theory and Compiling (2024/25) - ULB**  
 Work: Herma Elezi
 
