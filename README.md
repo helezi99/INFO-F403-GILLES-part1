@@ -14,187 +14,15 @@ Our project is dedicated to developing a **lexical analyzer for GILLES**, design
 
 ---
 
-## Project Overview
-
-This project implements a uniprocessor scheduling simulator, which supports three scheduling algorithms:
-- Deadline Monotonic (DM)
-- Earliest Deadline First (EDF)
-- Round Robin (RR)
-
-The simulator is designed to read tasks with specified computation times and deadlines, and then execute them according to the selected scheduling algorithm. The goal is to compare the performance of these algorithms in terms of task completion times and processor utilization.
+Here's a README.md file tailored for both Part 1 and Part 2 of the project:
 
 ---
 
-## INFO-F403 Project Part 1: Build and Run Instructions
+# GILLES Compiler Project - Part 1 and Part 2
 
-This project uses Python to simulate the scheduling algorithms. Below are the instructions for setting up and running the simulator, as well as the structure of the project directory.
+This project implements a compiler for the **Genial Imperative Language for Learning and the Enlightenment of Students (GILLES)**. It includes both a lexical analyzer (Part 1) and a parser (Part 2) with various features for building, testing, and executing the project.
 
-### Prerequisites
-
-Before running the project, ensure you have the following tools installed:
-- **Python** (3.x or higher)
-
-You can install Python from [here](https://www.python.org/downloads/).
-
-Additionally, you may need the following Python libraries:
-- `matplotlib` (for visualizing results, if applicable)
-- `numpy` (for numerical operations)
-
-You can install them using `pip`:
-```sh
-pip install matplotlib numpy
-```
-
-### Project Setup
-
-1. **Clone the repository:**
-
-   ```sh
-   git clone <your-repository-url>
-   cd <project-directory>
-   ```
-
-2. **Install required dependencies:**
-
-   If there is a `requirements.txt` file in the repository, install the required Python packages with:
-   ```sh
-   pip install -r requirements.txt
-   ```
-
-3. **Directory Structure:**
-
-   The project follows this directory structure:
-
-   ```
-   ├── src/                 # Source files for the simulator
-   │   ├── task.py          # Task class definition
-   │   ├── scheduler.py     # Scheduling algorithm implementations
-   │   └── simulator.py     # Main simulation logic
-   ├── test/                # Test files
-   │   ├── test_cases.py    # Unit tests
-   ├── results/             # Output folder for simulation results
-   ├── README.md            # Project documentation (this file)
-   ├── requirements.txt     # Required Python libraries
-   └── Makefile             # Makefile for managing tasks
-   ```
-
-### Makefile Targets
-
-#### Compile All
-
-To compile and set up the environment (if any pre-compilation is needed), run:
-```sh
-make all
-```
-
-#### Run the Simulator
-
-To execute the simulator with a task set and a specified algorithm, use the following command:
-```sh
-make run
-```
-
-#### Run Tests
-
-To run the unit tests for the simulator, use:
-```sh
-make tests
-```
-
-#### Generate Javadoc
-
-To generate documentation for the project (if any is required), run:
-```sh
-make javadoc
-```
-
-#### Clean Up
-
-To clean up generated files (e.g., `.pyc`, `.log`, results), use:
-```sh
-make clean
-```
-
-For cleaning generated Javadoc files:
-```sh
-make javadoclean
-```
-
-### Example Usage
-
-To compile the project, run tests, and then clean up, you can use the following commands:
-
-```sh
-make all
-make tests
-make clean
-```
-
-To generate Javadoc and then clean it up, use:
-
-```sh
-make javadoc
-make javadoclean
-```
-
-For more details, refer to the Makefile in the project directory.
-
----
-
-## INFO-F403 Project Part 2: Algorithm Details and Execution
-
-### Algorithm 1: Deadline Monotonic (DM)
-
-The Deadline Monotonic algorithm assigns priorities to tasks based on their deadlines, with tasks having earlier deadlines given higher priorities. It is a fixed-priority preemptive algorithm.
-
-### Algorithm 2: Earliest Deadline First (EDF)
-
-The Earliest Deadline First algorithm assigns priorities dynamically based on the task's deadline, with the task having the earliest deadline being given the highest priority.
-
-### Algorithm 3: Round Robin (RR)
-
-The Round Robin algorithm divides CPU time into fixed time slices and assigns them cyclically to tasks. If a task doesn't finish within its time slice, it is preempted and moved to the back of the queue.
-
-### Simulator Design
-
-- **Task Representation**: Each task is represented by a class `Task`, which holds information about the task's computation time, deadline, and remaining time.
-
-- **Scheduler**: The `Scheduler` class implements the three scheduling algorithms. It manages the simulation, including task execution and performance tracking.
-
-- **Test Cases**: Several test cases are included to evaluate the performance of each scheduling algorithm.
-
-### Example of Task Set
-
-| Task Name | Computation Time | Deadline |
-|-----------|------------------|----------|
-| T1        | 4                | 8        |
-| T2        | 2                | 6        |
-| T3        | 3                | 9        |
-| T4        | 1                | 5        |
-
-### Results and Discussion
-
-The simulator tracks task completion times and processor utilization for each algorithm. The results show how each algorithm handles a task set and the efficiency of task completion.
-
----
-
-## Contributing
-
-If you would like to contribute to this project, feel free to fork the repository, make improvements or fixes, and create a pull request. Please ensure that your contributions are well-documented and tested.
-
----
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
-## Makefile Overview
-
-Below is the breakdown of the targets in the Makefile for managing the build and execution of the project:
-
-### Prerequisites
+## Prerequisites
 
 Ensure you have the following tools installed:
 - `javac` (Java Compiler)
@@ -202,73 +30,142 @@ Ensure you have the following tools installed:
 - `jar` (Java Archive Tool)
 - `javadoc` (Java Documentation Tool)
 
+---
+
+## Part 1: Lexical Analyzer
+
 ### Makefile Targets
 
 #### Compile Everything
-
-To compile all the source files and generate the necessary artifacts, run:
-```sh
+To compile all the source files for the lexical analyzer and generate the necessary artifacts, run:
+```bash
 make all
 ```
 
 #### Create JAR File
-
-To create the JAR file, run:
-```sh
-make $(OUTPUT_JAR)
+To create the JAR file for the lexical analyzer, run:
+```bash
+make part1.jar
 ```
 
 #### Run Tests
-
 To compile the files and run tests on all `.gls` files in the test directory, run:
-```sh
+```bash
 make tests
 ```
 
 #### Run the Program
-
 To run the program from the JAR file with a specified `.gls` input file, run:
-```sh
+```bash
 make run
 ```
 
 #### Generate Javadoc
-
-To generate the Javadoc for the project, run:
-```sh
+To generate the Javadoc for Part 1, run:
+```bash
 make javadoc
 ```
 
 #### Clean Up
-
 To clean up generated files (`.class`, `.java`, and the JAR file), run:
-```sh
+```bash
 make clean
 ```
 
 To clean up generated Javadoc, run:
-```sh
+```bash
 make javadoclean
 ```
 
-### Directory Structure
+---
 
-- `src`: Contains the source files.
-- `test/test1`: Contains the test files.
-- `dist`: Directory where the JAR file will be generated.
-- `doc/javadoc`: Directory where the Javadoc will be generated.
+## Part 2: Parser
 
-### Example Usage
+### Makefile Targets
 
-To compile the project, run tests, and then clean up, you can use the following commands:
-```sh
+#### Compile Everything
+To compile all the source files for the parser and generate the necessary artifacts, run:
+```bash
+make all
+```
+
+#### Create JAR File
+To create the JAR file for the parser, run:
+```bash
+make part2.jar
+```
+
+#### Run the Program
+To parse a GILLES program and print the leftmost derivation to standard output, run:
+```bash
+java -jar part2.jar <sourceFile.gls>
+```
+
+To generate the parse tree as a LaTeX file, run:
+```bash
+java -jar part2.jar -wt <outputFile.tex> <sourceFile.gls>
+```
+
+#### Run Tests
+To run tests on various `.gls` files, use:
+```bash
+make tests
+```
+
+#### Generate Javadoc
+To generate the Javadoc for Part 2, run:
+```bash
+make javadoc
+```
+
+#### Clean Up
+To clean up generated files (`.class`, `.java`, and the JAR file), run:
+```bash
+make clean
+```
+
+To clean up generated Javadoc, run:
+```bash
+make javadoclean
+```
+
+---
+
+## Directory Structure
+
+- **`src/`**: Contains the source files for both the lexical analyzer and parser.
+- **`test/`**: Contains `.gls` test files to validate the functionality of the compiler.
+- **`dist/`**: Directory where the JAR files (`part1.jar` and `part2.jar`) are generated.
+- **`doc/javadoc/`**: Directory where the Javadoc is generated.
+
+---
+
+## Example Usage
+
+### Part 1 Example
+To compile the lexical analyzer, run tests, and clean up:
+```bash
 make all
 make tests
 make clean
 ```
 
-To generate the Javadoc and then clean it up, use:
-```sh
+To generate the Javadoc and clean it up:
+```bash
 make javadoc
 make javadoclean
 ```
+
+### Part 2 Example
+To compile the parser, test it, and generate a parse tree:
+```bash
+make all
+java -jar part2.jar -wt output.tex sourceFile.gls
+```
+
+To clean up all generated files:
+```bash
+make clean
+```
+
+---
