@@ -1,0 +1,10 @@
+
+LET Test_Comments BE
+    IN(a):  $this is a short comment
+    IN(b): 
+    print(a)
+    !!this is a long comment
+    c=b:
+    !!
+END
+!!this is a long comment that doesn't end

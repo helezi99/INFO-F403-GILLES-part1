@@ -1,0 +1,14 @@
+\documentclass[border=5pt]{standalone}
+
+\usepackage{tikz}
+\usepackage{forest}
+
+\begin{document}
+
+\begin{forest}for tree={rectangle, draw, l sep=20pt}[{Program} [{LET} ][{Euclidean_algorithm} ][{BE} ][{Code} [{Instruction} [{Input} [{IN} ][{(} ][{a} ][{)} ]]][{:} ][{Code} [{Instruction} [{Input} [{IN} ][{(} ][{b} ][{)} ]]][{:} ][{Code} [{Instruction} [{While} [{WHILE} ][{{} ][{Cond} [{CondOr} [{CondAtom} [{ExprArith} [{Product} [{Atom} [{0} ]][{$\epsilon$} ]][{$\epsilon$} ]][{Comparator} [{<} ]][{ExprArith} [{Product} [{Atom} [{b} ]][{$\epsilon$} ]][{$\epsilon$} ]]][{$\epsilon$} ]][{$\epsilon$} ]][{}} ][{REPEAT} ][{Code} [{Instruction} [{Assign} [{c} ][{=} ][{ExprArith} [{Product} [{Atom} [{b} ]][{$\epsilon$} ]][{$\epsilon$} ]]]][{:} ][{Code} [{Instruction} [{While} [{WHILE} ][{{} ][{Cond} [{CondOr} [{CondAtom} [{ExprArith} [{Product} [{Atom} [{b} ]][{$\epsilon$} ]][{$\epsilon$} ]][{Comparator} [{<=} ]][{ExprArith} [{Product} [{Atom} [{a} ]][{$\epsilon$} ]][{$\epsilon$} ]]][{$\epsilon$} ]][{$\epsilon$} ]][{}} ][{REPEAT} ][{Code} [{Instruction} [{Assign} [{a} ][{=} ][{ExprArith} [{Product} [{Atom} [{a} ]][{$\epsilon$} ]][{ExprArith} [{-} ][{Product} [{Atom} [{b} ]][{$\epsilon$} ]][{$\epsilon$} ]]]]][{:} ][{$\epsilon$} ]][{END} ]]][{:} ][{Code} [{Instruction} [{Assign} [{b} ][{=} ][{ExprArith} [{Product} [{Atom} [{a} ]][{$\epsilon$} ]][{$\epsilon$} ]]]][{:} ][{Code} [{Instruction} [{Assign} [{a} ][{=} ][{ExprArith} [{Product} [{Atom} [{c} ]][{$\epsilon$} ]][{$\epsilon$} ]]]][{:} ][{$\epsilon$} ]]]]][{END} ]]][{:} ][{Code} [{Instruction} [{Output} [{OUT} ][{(} ][{a} ][{)} ]]][{:} ][{$\epsilon$} ]]]]][{END} ]];
+\end{forest}
+
+\end{document}
+%% Local Variables:
+%% TeX-engine: pdflatex
+%% End:

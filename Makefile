@@ -1,64 +1,61 @@
-# Jflex jar path
-jar = ./more/jflex-1.9.1/lib/jflex-full-1.9.1.jar
+# Tools
+JAVAC = javac
+JFLEX = jflex
+JAR = jar
+JAVADOC = javadoc
 
-# Path & files names
-path_src = src/
-path_test = test/
-path_doc = doc/javadoc/
-path_dist = dist/
-path_more = more/
+# Source and target files
+SRC_DIR = src
+TEST_DIR = test/test1
+SOURCES = $(SRC_DIR)/LexicalAnalyzer.java $(SRC_DIR)/Main.java $(SRC_DIR)/Symbol.java $(SRC_DIR)/LexicalUnit.java $(SRC_DIR)/Parser.java $(SRC_DIR)/ParseTree.java
+TEST_FILES := $(wildcard $(TEST_DIR)/*.gls)
+INPUT_FILE = test/Euclid.gls
+OUTPUT_JAR = dist/part1.jar
+MAIN_CLASS = Main
+DOC_DIR = doc/javadoc
 
-lexer = LexicalAnalyzer
-symbol = Symbol
-lexical_unit = LexicalUnit
-main = Main
-manifest = manifest
+# Default target (compile everything)
+all: $(SRC_DIR)/LexicalAnalyzer.java $(OUTPUT_JAR)
 
-path_lexer = $(path_src)$(lexer)
-path_symbol = $(path_src)$(symbol)
-path_lexical_unit = $(path_src)$(lexical_unit)
-path_main = $(path_src)$(main)
+# Generate the LexicalAnalyzer.java file from the JFlex file
+$(SRC_DIR)/LexicalAnalyzer.java: $(SRC_DIR)/LexicalAnalyzer.flex
+	$(JFLEX) $(SRC_DIR)/LexicalAnalyzer.flex
 
-jar_main = $(path_dist)part1.jar
+# Compile the Java files
+$(SRC_DIR)/Main.class: $(SOURCES)
+	$(JAVAC) -Xlint $(SOURCES)
 
-# Files
-all_java_src = $(path_src)*.java
+# Create the dist directory if needed and generate the JAR file in this directory
+$(OUTPUT_JAR): $(SRC_DIR)/Main.class
+	$(JAR) cfe $(OUTPUT_JAR) $(MAIN_CLASS) -C $(SRC_DIR) .
 
-# Info for the .jar
-path_manifest = $(path_more)$(manifest).txt
+# Compile files before running tests
+compile: $(SRC_DIR)/Main.class
 
-flex = $(path_lexer).flex
-input = $(path_test)Euclid.gls
-
-all: jar
-
-compile: 
-	java -jar $(jar) $(flex)
-	javac $(all_java_src)
-
-doc: compile
-	javadoc -d $(path_doc) $(all_java_src)
-
-jar: compile
-# Create the manifest file
-	echo "Main-Class: $(main)" > $(path_manifest)
-# Create the .jar to run the program
-	jar cfm $(jar_main) $(path_manifest) -C $(path_src) .
-
-run_jar: jar
-	java -jar $(jar_main) $(input)
-
-run: compile
-	java -cp $(path_src) $(main) $(input)
-
-test: compile
-# Run the main program for all the test files on the test folder
-	for file in $(path_test)*.gls; do \
-		echo $$file; \
-		java -cp $(path_src) $(main) $$file; \
-		echo; \
+# Run tests on all .gls files in the test directory
+tests: compile
+	for test_file in $(TEST_FILES); do \
+		echo "\nTesting $$test_file\n"; \
+		java -cp $(SRC_DIR) $(MAIN_CLASS) "$$test_file"; \
 	done
+	echo "Done testing"
 
+
+
+# Run the program from the JAR file with a .gls file as input
+run: $(OUTPUT_JAR)
+	java -jar $(OUTPUT_JAR) $(INPUT_FILE)
+
+# Generate the Javadoc
+javadoc: $(SOURCES)
+	$(JAVADOC) -d $(DOC_DIR) $(SOURCES)
+
+# Clean up generated files (.class, .java, and the JAR file)
 clean:
-# The 1st * is for the .java~ sometimes created
-	rm -f -r $(path_lexer).java* $(path_src)*.class $(path_doc)* $(jar_main) $(path_manifest) $(jar_main)
+	rm -f $(SRC_DIR)/*.class $(SRC_DIR)/LexicalAnalyzer.java
+	echo "Done cleaning"
+
+# Clean up generated Javadoc
+javadoclean:
+	rm -rf $(DOC_DIR)
+	echo "Done cleaning Javadoc"

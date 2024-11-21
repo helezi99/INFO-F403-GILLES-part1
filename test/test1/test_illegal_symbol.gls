@@ -1,0 +1,8 @@
+
+LET Illegal_Symbol BE
+  IN(#):
+  IN(A):
+  OUT(a):
+  OUT(5oph1e)
+  c = 00;
+END

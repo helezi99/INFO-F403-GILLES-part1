@@ -1,3 +1,4 @@
+
 /**
  * A terminal symbol, a.k.a. a letter in the grammar.
  */
@@ -60,4 +61,27 @@ public enum LexicalUnit{
     INPUT,
     /** End Of Stream */
     EOS, // End of stream
+
+    EPSILON, // Epsilon
+
+    Program, 
+    Code, 
+    Instruction, 
+    Assign,
+    ExprArith,
+    ExprArith2,  
+    Prod, 
+    Prod2, 
+    Atom,
+    If, 
+    Cond, 
+    CondImpl,
+    CondOr,
+    CondOr2,
+    CondAtom,
+    Comp, 
+    While, 
+    Output, 
+    Input, 
+    EndIf
 }

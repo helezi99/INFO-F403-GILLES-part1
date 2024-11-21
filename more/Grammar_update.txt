@@ -1,0 +1,37 @@
+[1] <Program>           → LET [ProgName] BE <Code> END
+[2] <Code>              → <Instruction> : <Code>
+[3]                     → ε
+[4] <Instruction>       → <Assign>
+[5]                     → <If>
+[6]                     → <While>
+[7]                     → <Output>
+[8]                     → <Input>
+[9] <Assign>            → [VarName] = <ExprArith>
+[10] <ExprArith>        → <Prod><ExprArith'>
+[11] <Prod>             → <Atom><Prod'>
+[12] <prod'>            → *<Prod>
+[13]                    → /<Prod>
+[14]                    → ε
+[15] <ExprArith'>       → +<ExprArith>
+[16]                    → -<ExprArith>
+[17]                    → ε
+[18] <Atom>             → -<Atom>
+[19]                    → [VarName]
+[20]                    → [NUMBER]
+[21]                    → (<ExprArith>)
+[22] <If>               → IF { <Cond> } THEN <Code> <EndIf>
+[23] <EndIf>            → ELSE <Code> END
+[24]                    → END
+[25] <Cond>             → <CondOr> <CondImpl>
+[26] <CondImpl>         → -> <CondOr> <CondImpl>
+[27]                    → ε
+[28] <CondOr>           → <CondAtom> <CondOr'>
+[29] <CondOr'>          → |<CondAtom>| <CondOr'>
+[30]                    → ε
+[31] <CondAtom>         → <ExprArith> <Comp> <ExprArith> 
+[32] <Comp>             → ==
+[33]                    → <=
+[34]                    → <
+[35] <While>            → WHILE {<Cond>} REPEAT <Code> END
+[36] <Output>           → OUT([VarName])
+[37] <Input>            → IN([VarName])
