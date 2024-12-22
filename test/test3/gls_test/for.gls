@@ -1,0 +1,7 @@
+
+LET For_test BE
+    FOR {i = 0 TO 10} REPEAT
+        OUT(i):
+        i = i + 1:
+    END:
+END

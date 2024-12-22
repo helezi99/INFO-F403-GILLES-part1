@@ -2,7 +2,7 @@
 LET Test_Comments BE
     IN(a):  $this is a short comment
     IN(b): 
-    print(a)
+    OUT(c):
     !!this is a long comment
     c=b:
     !!

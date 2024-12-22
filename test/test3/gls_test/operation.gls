@@ -1,0 +1,4 @@
+LET Operation_test BE
+  d = 1 + -1*2 - 25/(-7+12) -(1-4*2):  $ d = 1
+  OUT(d):
+END

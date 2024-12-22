@@ -1,0 +1,14 @@
+\documentclass[border=5pt]{standalone}
+
+\usepackage{tikz}
+\usepackage{forest}
+
+\begin{document}
+
+\begin{forest}for tree={rectangle, draw, l sep=20pt}[{Program} [{LET} ][{PROGNAME} ][{BE} ][{Code} [{Instruction} [{Input} [{INPUT} ][{LPAREN} ][{VARNAME} ][{RPAREN} ]]][{COLUMN} ][{Code} [{Instruction} [{Input} [{INPUT} ][{LPAREN} ][{VARNAME} ][{RPAREN} ]]][{COLUMN} ][{Code} [{Instruction} [{While} [{WHILE} ][{LBRACK} ][{Cond} [{CondAtom} [{ExprArith} [{Prod} [{Atom} [{NUMBER} ]][{EPSILON} ]][{EPSILON} ]][{Comp} [{SMALLER} ]][{ExprArith} [{Prod} [{Atom} [{VARNAME} ]][{EPSILON} ]][{EPSILON} ]]][{EPSILON} ]][{RBRACK} ][{REPEAT} ][{Code} [{Instruction} [{Assign} [{VARNAME} ][{ASSIGN} ][{ExprArith} [{Prod} [{Atom} [{VARNAME} ]][{EPSILON} ]][{EPSILON} ]]]][{COLUMN} ][{Code} [{Instruction} [{While} [{WHILE} ][{LBRACK} ][{Cond} [{CondAtom} [{ExprArith} [{Prod} [{Atom} [{VARNAME} ]][{EPSILON} ]][{EPSILON} ]][{Comp} [{SMALEQ} ]][{ExprArith} [{Prod} [{Atom} [{VARNAME} ]][{EPSILON} ]][{EPSILON} ]]][{EPSILON} ]][{RBRACK} ][{REPEAT} ][{Code} [{Instruction} [{Assign} [{VARNAME} ][{ASSIGN} ][{ExprArith} [{Prod} [{Atom} [{VARNAME} ]][{EPSILON} ]][{ExprArith2} [{MINUS} ][{Prod} [{Atom} [{VARNAME} ]][{EPSILON} ]][{EPSILON} ]]]]][{COLUMN} ][{EPSILON} ]][{END} ]]][{COLUMN} ][{Code} [{Instruction} [{Assign} [{VARNAME} ][{ASSIGN} ][{ExprArith} [{Prod} [{Atom} [{VARNAME} ]][{EPSILON} ]][{EPSILON} ]]]][{COLUMN} ][{Code} [{Instruction} [{Assign} [{VARNAME} ][{ASSIGN} ][{ExprArith} [{Prod} [{Atom} [{VARNAME} ]][{EPSILON} ]][{EPSILON} ]]]][{COLUMN} ][{EPSILON} ]]]]][{END} ]]][{COLUMN} ][{Code} [{Instruction} [{Output} [{OUTPUT} ][{LPAREN} ][{VARNAME} ][{RPAREN} ]]][{COLUMN} ][{EPSILON} ]]]]][{END} ]];
+\end{forest}
+
+\end{document}
+%% Local Variables:
+%% TeX-engine: pdflatex
+%% End:

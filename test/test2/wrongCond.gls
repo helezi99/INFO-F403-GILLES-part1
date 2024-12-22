@@ -1,0 +1,9 @@
+!! Euclid's algorithm !!
+
+LET Euclidean_algorithm BE
+  
+  WHILE {0 < b} BE
+    OUT(a):
+  END:
+
+END

@@ -1,0 +1,14 @@
+\documentclass[border=5pt]{standalone}
+
+\usepackage{tikz}
+\usepackage{forest}
+
+\begin{document}
+
+\begin{forest}for tree={rectangle, draw, l sep=20pt}[{Program} [{Code} [{Input} [{VARNAME} ]][{Code} [{Input} [{VARNAME} ]][{Code} [{While} [{SMALLER} [{NUMBER} ][{VARNAME} ]][{Code} [{ASSIGN} [{VARNAME} ][{VARNAME} ]][{Code} [{While} [{SMALEQ} [{VARNAME} ][{VARNAME} ]][{Code} [{ASSIGN} [{VARNAME} ][{MINUS} [{VARNAME} ][{VARNAME} ]]]]][{Code} [{ASSIGN} [{VARNAME} ][{VARNAME} ]][{Code} [{ASSIGN} [{VARNAME} ][{VARNAME} ]]]]]]][{Code} [{Output} [{VARNAME} ]]]]]]];
+\end{forest}
+
+\end{document}
+%% Local Variables:
+%% TeX-engine: pdflatex
+%% End:

@@ -1,0 +1,14 @@
+\documentclass[border=5pt]{standalone}
+
+\usepackage{tikz}
+\usepackage{forest}
+
+\begin{document}
+
+\begin{forest}for tree={rectangle, draw, l sep=20pt}[{Program} [{LET} ][{PROGNAME} ][{BE} ][{Code} [{Instruction} [{For} [{FOR} ][{LBRACK} ][{Assign} [{VARNAME} ][{ASSIGN} ][{ExprArith} [{Prod} [{Atom} [{NUMBER} ]][{EPSILON} ]][{EPSILON} ]]][{TO} ][{ExprArith} [{Prod} [{Atom} [{NUMBER} ]][{EPSILON} ]][{EPSILON} ]][{RBRACK} ][{REPEAT} ][{Code} [{Instruction} [{Output} [{OUTPUT} ][{LPAREN} ][{VARNAME} ][{RPAREN} ]]][{COLUMN} ][{EPSILON} ]][{END} ]]][{COLUMN} ][{EPSILON} ]][{END} ]];
+\end{forest}
+
+\end{document}
+%% Local Variables:
+%% TeX-engine: pdflatex
+%% End:

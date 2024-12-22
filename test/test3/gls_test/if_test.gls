@@ -1,0 +1,12 @@
+!! Euclid's algorithm !!
+
+LET If_test BE
+  IN(a):
+  IF {a < 5} THEN
+      a = 0:
+      OUT(a):
+  ELSE
+      a = 10:
+      OUT(a):
+  END:
+END

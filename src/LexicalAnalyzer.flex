@@ -14,7 +14,7 @@ import java.util.regex.PatternSyntaxException;
 %unicode               // Use unicode
 %line                  // Use line counter (yyline variable)
 %column                // Use character counter by line (yycolumn variable)
-%function nextToken
+%function nextSymbol
 %type Symbol
 %yylexthrow PatternSyntaxException
 
@@ -88,6 +88,8 @@ UpToEnd        = ({Any}{EndLine}) | ({EndLine})
   "ELSE"              {return new Symbol(LexicalUnit.ELSE, yyline, yycolumn, yytext());}
 // Loop keywords
   "WHILE"             {return new Symbol(LexicalUnit.WHILE, yyline, yycolumn, yytext());}
+  "FOR"             {return new Symbol(LexicalUnit.FOR, yyline, yycolumn, yytext());}
+  "TO"             {return new Symbol(LexicalUnit.TO, yyline, yycolumn, yytext());}
   "REPEAT"            {return new Symbol(LexicalUnit.REPEAT, yyline, yycolumn, yytext());}
 // Comparison operators
   "=="                {return new Symbol(LexicalUnit.EQUAL, yyline, yycolumn, yytext());}

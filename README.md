@@ -1,4 +1,4 @@
-# GILLES Compiler Project Part-1&2
+# GILLES Compiler Project Part 1, 2 & 3
 **INFO-F403 - Language Theory and Compiling (2024/25) - ULB**  
 Work: Herma Elezi
 
@@ -10,17 +10,17 @@ Work: Herma Elezi
 
 In the world of programming languages, defining and recognizing valid code syntax is fundamental. Lexical analyzers, also known as scanners, play a vital role by transforming source code into tokens for further processing by parsers and compilers. The Genial Imperative Language for Learning and the Enlightenment of Students (GILLES) was crafted with a similar goal—to provide students a hands-on experience with compiler theory.
 
-Our project is dedicated to developing a **lexical analyzer for GILLES**, designed using **JFlex**, to recognize keywords, variables, numbers, and other language tokens. Through this process, we delve into core concepts of **language theory, regex matching,** and **token handling**.
+Our project is dedicated to developing a **compiler for GILLES**, designed using **JFlex**, to recognize keywords, variables, numbers, and other language tokens. It is extended further to include a **parser** and **LLVM IR generator** for comprehensive learning and practical applications of compiler theory.
 
 ---
 
-Here's a README.md file tailored for both Part 1 and Part 2 of the project:
+# GILLES Compiler Project - Part 1, Part 2, and Part 3
 
----
+This project implements a compiler for the **Genial Imperative Language for Learning and the Enlightenment of Students (GILLES)**. It includes the following:
 
-# GILLES Compiler Project - Part 1 and Part 2
-
-This project implements a compiler for the **Genial Imperative Language for Learning and the Enlightenment of Students (GILLES)**. It includes both a lexical analyzer (Part 1) and a parser (Part 2) with various features for building, testing, and executing the project.
+- **Part 1:** Lexical analyzer that recognizes and tokenizes the source code.
+- **Part 2:** Parser that constructs a parse tree and verifies syntax correctness.
+- **Part 3:** LLVM IR generator that translates the source code into LLVM Intermediate Representation.
 
 ## Prerequisites
 
@@ -28,7 +28,7 @@ Ensure you have the following tools installed:
 - `javac` (Java Compiler)
 - `jflex` (JFlex Scanner Generator)
 - `jar` (Java Archive Tool)
-- `javadoc` (Java Documentation Tool)
+- `lli` (LLVM Interpreter)
 
 ---
 
@@ -131,11 +131,41 @@ make javadoclean
 
 ---
 
+## Part 3: LLVM IR Generator
+
+### Makefile Targets
+
+#### Compile Everything
+To compile all the source files for the LLVM IR generator and generate the necessary artifacts, run:
+```bash
+make all
+```
+
+#### Create JAR File
+To create the JAR file for the LLVM IR generator, run:
+```bash
+make part3.jar
+```
+
+#### Run the Program
+To generate LLVM IR for a GLS program, run:
+```bash
+java -jar part3.jar <sourceFile.gls>
+```
+
+#### Run Tests
+To run tests on various `.gls` files, use:
+```bash
+make test
+```
+
+---
+
 ## Directory Structure
 
-- **`src/`**: Contains the source files for both the lexical analyzer and parser.
+- **`src/`**: Contains the source files for the compiler.
 - **`test/`**: Contains `.gls` test files to validate the functionality of the compiler.
-- **`dist/`**: Directory where the JAR files (`part1.jar` and `part2.jar`) are generated.
+- **`dist/`**: Directory where the JAR files are generated.
 - **`doc/javadoc/`**: Directory where the Javadoc is generated.
 
 ---
@@ -168,4 +198,15 @@ To clean up all generated files:
 make clean
 ```
 
----
+### Part 3 Example
+To compile the LLVM IR generator, run tests, and clean up:
+```bash
+make all
+make test
+make clean
+```
+
+To generate LLVM IR for a GLS program:
+```bash
+java -jar part3.jar test/test3/gls_test/if_test.gls
+```

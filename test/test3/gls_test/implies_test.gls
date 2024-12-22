@@ -1,0 +1,13 @@
+!! Euclid's algorithm !!
+
+LET Implies_test BE
+  IN(a):
+  IN(b):
+  WHILE {2 < b -> 2 < a} REPEAT
+      OUT(a):
+      OUT(b):
+      IN(a):
+      IN(b):
+  END:
+  OUT(a):
+END
